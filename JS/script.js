@@ -97,3 +97,125 @@ let nameJ = "Xandr";
 console.log(nameJ ?? "No Name");
 // ?? - возвращает 1 знгачение есть тип данных не null или undenined
 // ========================= Условный оператор Урок №6 =======================
+let message = "Helo World";
+if (3 > 2) {
+    console.log(message);
+}
+
+let messageTwo = "WTF";
+let first = 5;
+let second = 10;
+
+if (first < second) {
+    console.log(messageTwo);
+}
+// -------------- else (Основной вид записи if/else----------------------
+let messageThre = "FirstMessage";
+let nember = 6;
+if (nember > 10) {
+    console.log(messageThre);
+} else {
+    console.log('SecondMessage');
+}
+
+
+let testNumber = 0;
+if (testNumber > 50) {
+    console.log("testNumber > 50");
+} else if (testNumber > 30) {
+    console.log("testNumber > 30");
+}
+else if (testNumber > 10) {
+    console.log("testNumber > 10");
+}
+else if (testNumber > 1) {
+    console.log("testNumber > 1");
+} else {
+    console.log("something wrong")
+}
+// -------------- Условный оператор ?(Стоит применять для возврата того или иного из 1 строки)----------------------
+let testFirstMessage = "Hello";
+let testSecondMessage = (9 > 10) ? ", John!" : ", Elizabeth!";
+testFirstMessage += testSecondMessage;
+console.log(testFirstMessage);
+
+let someFirstMessage = "Hello";
+let someSecondMessage = 3 > 10 ? ", Michael!" :
+    31 > 30 ? ", Olga!" :
+        5 > 10 ? ", Andrev!" :
+            5 > 1 ? ", Oliver!" : ", Eugen!";
+
+someFirstMessage += someSecondMessage;
+console.log(someFirstMessage);
+// ========================= Циклы FORE и WHILE Урок №7 =======================
+let num = 0;
+while (num < 5) {
+    console.log(num);
+    num++;
+}
+//       начало;      условие;      шаг цикла
+for (let testNum = 0; testNum < 5; testNum++){
+    console.log(testNum);
+}
+
+// дериктива брейк - при выполнении полностью останавливает цикл
+let someNum = 0;
+for (; someNum < 5; someNum++){
+    console.log(someNum);
+    if (someNum == 2) break;
+}
+
+console.log(`job done, someNum = ${someNum}`);
+// дериктива continue - при выполнение игнорит точку и продолжает вып цикла
+let omgNum = 0;
+for (; omgNum < 5; omgNum++){
+    if (omgNum == 2) continue;
+    console.log(omgNum);
+}
+// деректива с меткой - для остановки дочернего цикла и перехода по метке (в родителя)
+startPoint: for (let wtfNum = 0; wtfNum < 2; wtfNum++){
+    for (let size = 0; size < 3; size++){
+        if (size == 2) {
+            break startPoint;
+        }
+        console.log(size);
+    }
+}
+// ДЗ к уроку № 7
+// Задача №1
+let eNum = 1;
+while (eNum < 6) {
+    console.log(eNum);
+    eNum++;
+}
+// Задача №2
+// Нет последнее число выводимое в консоль не будет 0 потому что false не выведет...
+// Задача №3
+let zNum = 0
+while (zNum < 3) {
+    console.log(`Number: ${zNum}`);
+    zNum++;
+}
+// Задача №4
+for (let fNum = 0; fNum < 2; fNum++){
+    for (let fSize = 0; fSize < 3; fSize++){
+        console.log(fSize);
+        if (fSize == 1) break;
+    }
+}
+// ========================= Стрелочные функции/рекурсия/планирование Урок №8 =======================
+function calcSumm(numOme = 2, numTwo = 3) {
+    console.log(`Переменная numOne:${numOme}`);
+    console.log(`Переменная numTwo:${numTwo}`);
+
+    let numSumm = numOme + numTwo;
+    console.log(`Сумма:${numSumm}`);
+}
+calcSumm(3, 7);
+// Функция с return
+function someSumm(someOne, someTwo) {
+    let omgSumm = someOne + someTwo;
+    return omgSumm;
+}
+let funcResult = someSumm(3, 2);
+console.log(`summ: ${funcResult}`);
